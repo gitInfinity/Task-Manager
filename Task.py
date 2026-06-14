@@ -29,7 +29,7 @@ class Task:
         
         # Check if task already exists
         for task in tasks:
-            if task['name'] == name:
+            if task['name'].lower() == name.lower():
                 print(f"Task '{name}' already exists.")
                 file.close()
                 return
@@ -54,7 +54,7 @@ class Task:
             return tasks
         else:
             for task in tasks:
-                if task['name'] == name:
+                if task['name'].lower() == name.lower():
                     file.close()
                     return task
             file.close()
